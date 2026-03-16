@@ -86,11 +86,11 @@ final class JuspayAdapter implements PaymentProviderInterface
                 amountPaisa:     $payload->amountPaisa,
                 currency:        $payload->currency,
                 paymentUrl:      $data['payment_links']['web'] ?? null,
-                sdkPayload:      json_encode([
+                sdkPayload:      [
                     'client_auth_token' => $data['client_auth_token'] ?? null,
                     'order_id'          => $data['order_id']          ?? null,
                     'merchant_id'       => $this->merchantId,
-                ]),
+                ],
                 raw: $data,
             );
         } catch (GuzzleException $e) {

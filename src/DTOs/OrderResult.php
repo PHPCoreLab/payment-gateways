@@ -12,7 +12,7 @@ final class OrderResult
         public readonly int     $amountPaisa,
         public readonly string  $currency,
         public readonly ?string $paymentUrl  = null,
-        public readonly ?string $sdkPayload  = null,
+        public readonly ?array  $sdkPayload  = null,
         public readonly array   $raw         = [],
     ) {}
 }

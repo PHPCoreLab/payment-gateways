@@ -91,7 +91,7 @@ final class PayUAdapter implements PaymentProviderInterface
             amountPaisa:     $payload->amountPaisa,
             currency:        $payload->currency,
             paymentUrl:      $this->paymentUrl,
-            sdkPayload:      json_encode($sdkPayload),
+            sdkPayload:      $sdkPayload,
             raw:             $sdkPayload,
         );
     }

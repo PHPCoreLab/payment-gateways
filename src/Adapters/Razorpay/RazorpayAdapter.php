@@ -61,7 +61,7 @@ final class RazorpayAdapter implements PaymentProviderInterface
                 providerOrderId: $data['id'],
                 amountPaisa:     $data['amount'],
                 currency:        $data['currency'],
-                sdkPayload:      json_encode([
+                sdkPayload:      [
                     'key'      => $this->keyId,
                     'amount'   => $data['amount'],
                     'currency' => $data['currency'],
@@ -72,7 +72,7 @@ final class RazorpayAdapter implements PaymentProviderInterface
                         'email'   => $payload->customerEmail,
                         'contact' => $payload->customerPhone,
                     ],
-                ]),
+                ],
                 raw: $data,
             );
         } catch (GuzzleException $e) {
