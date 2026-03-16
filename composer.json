@@ -1,0 +1,41 @@
+{
+    "name": "phpcorelab/payment-gateways",
+    "description": "Provider-agnostic PHP payment gateway library. Unified API for Razorpay, PhonePe, PayU, Paytm and Juspay.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["payment", "gateway", "razorpay", "phonepe", "payu", "paytm", "juspay", "india", "laravel"],
+    "authors": [
+        {
+            "name": "PHPCoreLab",
+            "email": "contact@phpcorelab.com",
+            "homepage": "https://github.com/PHPCoreLab"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.0",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPCoreLab\\PaymentGateways\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPCoreLab\\PaymentGateways\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test":    "phpunit",
+        "analyse": "phpstan analyse src --level=8",
+        "cs":      "phpcs --standard=PSR12 src/"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
