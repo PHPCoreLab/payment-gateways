@@ -56,7 +56,9 @@ final class RazorpayAdapterTest extends TestCase
         ]);
 
         $result  = $adapter->createOrder(new OrderPayload(orderId: 'ORD-002', amountPaisa: 10000));
-        $payload = json_decode($result->sdkPayload, true);
+        $payload = $result->sdkPayload;
+
+        $this->assertIsArray($payload);
 
         $this->assertSame('test_key', $payload['key']);
         $this->assertSame('order_abc', $payload['order_id']);

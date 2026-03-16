@@ -44,7 +44,7 @@ final class PaymentGatewayTest extends TestCase
                     providerOrderId: 'prov_' . $this->providerName,
                     amountPaisa:     $payload->amountPaisa,
                     currency:        $payload->currency,
-                    sdkPayload:      json_encode(['provider' => $this->providerName]),
+                    sdkPayload:      ['provider' => $this->providerName],
                 );
             }
 
